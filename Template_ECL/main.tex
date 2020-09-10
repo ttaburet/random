@@ -1,0 +1,96 @@
+\documentclass[a4paper,12pt,twoside]{report}
+
+\input{Includes/preamble.tex} %Packages, commands and ... are stored into this file
+
+\input{Includes/PDG/PDG.tex}
+\definecolor{lightgray}{gray}{0.9}
+
+\author{Théo TABURET}
+\titleFR{Méthodes de stéganographie fondées sur la prise en compte du bruit de capteur}
+\titleENG{Steganography methods based on sensor noise estimation}
+
+\specialiteFR{Automatique, Génie informatique, Traitement du Signal et image}
+\laboratory{CRISTAL}
+\ED{\'{E}cole doctorale SPI \no 072 : Sciences pour l'ingénieur}
+
+\dateFR{XX YY 2020}
+\hour{14h}
+\building{ESPRIT-Cité Scientifique}
+\room{Atrium}
+
+\jury{
+	Rapporteur, & Xxxx Yyyyy, &DR YYY, Laboratoire XXX\\
+	Rapporteur, & Xxxx Yyyyy, & Pr YYY, Laboratoire XXX\\
+	Examinateur, & Xxxx Yyyyy, &MdC HdR YYY, Laboratoire XXX\\
+	Examinateur, & Xxxx Yyyyy & Pr YYY, Laboratoire XXX\\
+	Examinateur, & Xxxx Yyyyy, & DR YYY, Laboratoire XXX\\
+	Examinateur, & Xxxx Yyyyy & MdC YYY, Laboratoire XXX\\
+}
+
+\resumeFR{%1000 caractères maxi (ADUM)
+	\lipsum[0-2]
+}
+\resumeENG{%1000 caractères maxi (ADUM)
+	\lipsum[0-2]
+}
+
+\keywordsFR{Stéganographie, Stéganalyse, Sécurité}
+\keywordsENG{Steganography, Stéganalysis, Security}
+
+\setlist{nosep}
+
+\counterwithin{section}{chapter}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4} 
+
+\begin{document}
+	\counterwithout{section}{chapter}
+
+	\renewcommand{\chaptername}{Chapitre}
+	\renewcommand{\contentsname}{Plan}
+
+	%%% FIXING space above and below displayed equations %%%
+	\setlength{\abovedisplayskip}{3pt}
+	\setlength{\belowdisplayskip}{3pt}
+
+	\hypersetup{pageanchor=false}
+	\begin{titlepage}
+		\pagedegarde
+		\tableofcontents
+	\end{titlepage}
+	\newpage
+
+	\hypersetup{pageanchor=true}
+	\pagenumbering{arabic}
+
+	\cleardoublepage
+		\input{Includes/Introduction.tex}
+	\newpage
+	
+	% \cleardoublepage
+	% 	\input{Includes/notations.tex}
+	% \newpage
+
+	\cleardoublepage
+
+	\renewcommand{\chaptername}{Chapter}
+	\input{Includes/C1.tex}
+	
+	\input{Includes/C2.tex}
+
+	\cleardoublepage
+
+	\input{Includes/Appendices.tex}
+
+	\newpage\leavevmode\thispagestyle{empty}\newpage %Avoid issues with last figures not being displayed
+
+	\cleardoublepage
+	%\printbibliography
+	\cleardoublepage
+
+	\resumeLongFR{\lipsum[0-3]}
+	\resumeLongENG{\lipsum[0-3]}
+	%\backmatter
+
+\end{document}

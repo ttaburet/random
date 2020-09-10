@@ -1,0 +1,206 @@
+% !TEX root =  ../main.tex
+\makeatletter
+\def\@ecole{école}
+\newcommand{\ecole}[1]{
+  \def\@ecole{#1}
+}
+
+\def\@specialiteFR{Spécialité}
+\newcommand{\specialiteFR}[1]{
+  \def\@specialiteFR{#1}
+}
+
+\def\@ED{\'{E}cole Doctorale}
+\newcommand{\ED}[1]{
+  \def\@ED{#1}
+}
+
+\def\@doctorat{Doctorat}
+\newcommand{\doctorat}[1]{
+  \def\@doctorat{#1}
+}
+
+\def\@adresse{Adresse}
+\newcommand{\adresse}[1]{
+  \def\@adresse{#1}
+}
+
+\def\@titleFR{}
+\newcommand{\titleFR}[1]{
+  \def\@titleFR{#1}
+}
+\def\@dateFR{}
+\newcommand{\dateFR}[1]{
+  \def\@dateFR{#1}
+}
+\def\@building{}
+\newcommand{\building}[1]{
+  \def\@building{#1}
+}
+\def\@room{}
+\newcommand{\room}[1]{
+  \def\@room{#1}
+}
+\def\@hour{}
+\newcommand{\hour}[1]{
+  \def\@hour{#1}
+}
+\def\@resumeFR{}
+\newcommand{\resumeFR}[1]{
+  \def\@resumeFR{#1}
+}
+\def\@resumeLongFR{}
+\newcommand{\resumeLongFR}[1]{
+  \newpage
+    \chapter*{Résumé en français}\label{chap:resumeLongFR}
+      \addcontentsline{toc}{chapter}{Résumé en français} \markboth{Résumé en français}{}
+        {#1}
+}
+\def\@titleENG{}
+\newcommand{\titleENG}[1]{
+  \def\@titleENG{#1}
+}
+\def\@dateENG{}
+\newcommand{\dateENG}[1]{
+  \def\@dateENG{#1}
+}
+\def\@resumeENG{}
+\newcommand{\resumeENG}[1]{
+  \def\@resumeENG{#1}
+}
+\def\@resumeLongENG{}
+\newcommand{\resumeLongENG}[1]{
+    \newpage
+    \chapter*{Résumé en anglais}\label{chap:resumeLongENG}
+      \addcontentsline{toc}{chapter}{Résumé en français} \markboth{Résumé en anglais}{}
+        {#1}
+}
+\def\@keywordsFR{}
+\newcommand{\keywordsFR}[1]{
+  \def\@keywordsFR{#1}
+}
+
+\def\@keywordsENG{}
+\newcommand{\keywordsENG}[1]{
+  \def\@keywordsENG{#1}
+}
+
+\def\@laboratory{}
+\newcommand{\laboratory}[1]{
+  \def\@laboratory{#1}
+}
+
+\def\@directeur{directeur}
+\newcommand{\directeur}[1]{
+  \def\@directeur{#1}
+}
+
+\def\@encadrant{encadrant}
+\newcommand{\encadrant}[1]{
+  \def\@encadrant{#1}
+}
+
+\def\@jury{}
+\newcommand{\jury}[1]{
+  \def\@jury{
+    \begin{tabular}{>{\bfseries}lll}
+      #1
+    \end{tabular}
+    \vfill
+  }
+}
+
+\makeatother
+
+\makeatletter
+\newcommand{\pagedegarde}{
+  \begin{figure}[t]
+    \vspace*{-1in}
+    \hspace*{1in}
+    \includegraphics[width=0.35\textwidth, right]{Includes/PDG/logos/logo_Centrale_Lille.png}
+  \end{figure}
+
+  \vspace*{5em} %25em
+  \colorbox{lightgray}{
+    \begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} l}
+      \textbf{Soutenance le} \@dateFR & \textbf{à} \@hour \\
+      \textbf{Bâtiment} \@building & \textbf{Salle} \@room
+    \end{tabular*}
+  }
+  % \begin{flushleft}
+  %   %\textbf{N\textdegree d'ordre:} \@orderNumer\\
+  % \end{flushleft}
+  \begin{centering}
+    \vspace*{1em}
+    \textbf{\uppercase{Centrale Lille}}\\
+    \vspace*{1em}
+    \textbf{\uppercase{Thèse}}
+
+    Présentée en vue \\
+    d'obtenir le grade de
+
+    \textbf{\uppercase{Docteur}}
+
+    En
+
+    \textbf{Spécialité:} \@specialiteFR
+    \vspace*{1em}\\
+    Par
+
+    {\large\@author}
+
+    \vspace*{1em}
+    \textbf{\uppercase{Doctorat délivré par Centrale Lille}}
+    \vspace*{1em}
+
+    Titre de la thèse:\\
+    \textbf{{\large\@titleFR}}\\
+    \vspace{2em}
+
+    Soutenue le \@dateFR \space devant le jury d'examen:\\
+    \vspace{5mm}
+    \@jury
+
+    \vspace*{1em}
+    Thèse préparée dans le Laboratoire \@laboratory\\
+
+    \begin{figure}[H]
+      \begin{centering}
+      \subfloat{\begin{centering}
+      \includegraphics[clip,width=0.2\textwidth]{Includes/PDG/logos/logo_Centrale_Lille.png}
+      \par\end{centering}
+      }\subfloat{\begin{centering}
+      \includegraphics[width=0.2\textwidth]{Includes/PDG/logos/logo_Univ_Lille.png}
+      \par\end{centering}
+      }\subfloat{\begin{centering}
+      \includegraphics[width=0.2\textwidth]{Includes/PDG/logos/logo_Cristal.png}
+      \par\end{centering}
+      }
+      \par\end{centering}
+    \end{figure}
+  \end{centering}
+	
+  \cleardoublepage
+  
+  \newpage
+	\begin{flushleft}
+    \textbf{{\large Titre en français}}:\\ \@titleFR\\
+    \vspace*{1em}
+    \textbf{{\large Résumé en français}}:\\ \@resumeFR
+
+    \vfill
+    Mots-clefs: \@keywordsFR\\
+  \end{flushleft}
+
+  \newpage
+  \begin{flushleft}
+    \textbf{{\large Titre en anglais}}:\\ \@titleENG\\
+    \vspace*{1em}
+    \textbf{{\large Résumé en anglais}}:\\ \@resumeENG
+
+    \vfill
+    Mots-clefs: \@keywordsENG\\
+  \end{flushleft}
+
+\restoregeometry  
+}

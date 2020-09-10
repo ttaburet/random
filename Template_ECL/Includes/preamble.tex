@@ -1,0 +1,72 @@
+% !TEX root =  ../main.tex
+%%% PACKAGES %%%
+\usepackage{microtype}
+\usepackage{lipsum} %For intro
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel} %Linguistic package: English
+\usepackage{babel}
+
+\usepackage[a4paper]{geometry} %Page margin
+\usepackage{fancyhdr} %Headers and footers
+\usepackage{mathtools} %Maths
+\usepackage{amssymb} %Maths symbols
+\usepackage{array} %Tables
+\usepackage{booktabs} %Tables
+\usepackage{siunitx} %Tables: For having numbers aligned to the decimal point
+
+\usepackage{caption} %Figures and captions
+\usepackage[unicode=true]{hyperref} %For hyperlinks
+\usepackage{csquotes} %To remove a warning linked to babel
+\usepackage{textcase} %For {Lower/Upper}case extended versions
+\usepackage{xargs} %For args in commands
+\usepackage{nicefrac}
+\usepackage{units}
+\usepackage{tikz}
+\usepackage{float}
+\usetikzlibrary{tikzmark,decorations.pathreplacing}
+\usepackage{subfig}
+\usepackage{stmaryrd}
+\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
+\usepackage{csquotes}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{todonotes}
+\usepackage{grffile}
+%\usepackage{subcaption}
+\usepackage{diagbox}
+\usepackage{multirow}
+
+\usepackage{chngcntr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+%%% BIBLIO AND UTF8/UNICODE ISSUE
+\usepackage{biblatex}
+\bibliography{bib-fixed}
+
+
+%PDG
+\usepackage{graphicx}
+\usepackage{eso-pic}	% Nécessaire pour mettre des images en arrière plan
+% Permet d'écrite 'THESE' de haut en bas
+\usepackage[export]{adjustbox}
+\usepackage{booktabs,xcolor,siunitx}
+\usepackage{stfloats}
+%
+
+\newcommand\secTOC[1]{
+    \section*{#1}
+    \addcontentsline{toc}{section}{#1}
+    \markboth{#1}{#1}}
+
+% Start new chapter on same page
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\scr@startchapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+%%%Stop LaTeX from breaking an inline math equation
+\binoppenalty=\maxdimen
+\relpenalty=\maxdimen
